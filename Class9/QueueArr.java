@@ -1,13 +1,13 @@
 import java.util.*;
 
-public class QUEUE1
+public class QueueArr
 {
     int queue[];
     int front;
     int rear;
     int size = 5;
     
-    QUEUE1(){
+    QueueArr(){
         queue = new int[size];
         front = -1;
         rear = -1;
@@ -76,14 +76,14 @@ public class QUEUE1
 
     public static void main(String[] args)
     {
-        QUEUE1 q = new QUEUE1();
+        QueueArr q = new QueueArr();
         Scanner sc = new Scanner(System.in);
 
         System.out.println("*********** WELCOME ***********");
-        System.out.println("Enter 1 to ENQUEUE an Element into QUEUE1. ");
-        System.out.println("Enter 2 to DEQUEUE an Element from QUEUE1. ");
-        System.out.println("Enter 3 to PEEK into QUEUE1. ");
-        System.out.println("Enter 4 to Display QUEUE1. ");
+        System.out.println("Enter 1 to ENQUEUE an Element into QueueArr. ");
+        System.out.println("Enter 2 to DEQUEUE an Element from QueueArr. ");
+        System.out.println("Enter 3 to PEEK into QueueArr. ");
+        System.out.println("Enter 4 to Display QueueArr. ");
         System.out.println("Enter -1 to EXIT");
 
         int ip,data;

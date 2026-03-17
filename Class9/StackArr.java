@@ -1,12 +1,12 @@
 import java.util.*;
 
-public class STACK1
+public class StackArr
 {
     int stack[];
     int top;
     int size = 5;
     
-    STACK1(){
+    StackArr(){
         stack = new int[size];
         top = -1;
     }
@@ -54,7 +54,7 @@ public class STACK1
 
     public static void main(String[] args)
     {
-        STACK1 s = new STACK1();
+        StackArr s = new StackArr();
         Scanner sc = new Scanner(System.in);
 
         System.out.println("*********** WELCOME ***********");
