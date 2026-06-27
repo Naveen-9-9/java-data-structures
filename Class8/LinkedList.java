@@ -7,17 +7,17 @@ class Node{
     }
 }
 public class LinkedList {
-    Node Head;
+    Node front;
     LinkedList(){
-        this.Head = null;                                                                  //2
+        this.front = null;                                                                  //2
     }
     public void InsertAtEnd(int data){
         Node newNode = new Node(data);
-        if (this.Head == null){
-            this.Head = newNode;                                                          //3
+        if (this.front == null){
+            this.front = newNode;                                                          //3
         }
         else{
-            Node temp = this.Head;
+            Node temp = this.front;
             while (temp.next != null) {
                 temp=temp.next;
             }
@@ -26,22 +26,22 @@ public class LinkedList {
     }
     public void InsertAtBegin(int data){
         Node newNode = new Node(data);
-        if (this.Head == null){
-            this.Head = newNode;
+        if (this.front == null){
+            this.front = newNode;
         }                                                                               //5
         else{
-            newNode.next = this.Head;
-            this.Head = newNode;
+            newNode.next = this.front;
+            this.front = newNode;
         }
     }
     public void InsertAtPostion(int data ,  int pos ){
         Node newNode = new Node(data);
         if (pos == 1) {
-            newNode.next = this.Head;
-            this.Head = newNode;
+            newNode.next = this.front;
+            this.front = newNode;
         }
         else{
-            Node temp = this.Head;
+            Node temp = this.front;
             while (pos - 2 > 0 && temp.next != null) {                                  //6
                 temp = temp.next;
                 pos--;
@@ -52,12 +52,12 @@ public class LinkedList {
         }
     }
     public void DeleteAtEnd(){
-        if (this.Head == null) {
+        if (this.front == null) {
             System.out.println("the list is empty");
-        }else if(this.Head.next == null){
-            this.Head = null;
+        }else if(this.front.next == null){
+            this.front = null;
         }else{
-            Node temp = this.Head;
+            Node temp = this.front;
             while (temp.next.next != null) {
                 temp = temp.next;
             }
@@ -65,19 +65,19 @@ public class LinkedList {
         }
     }
     public void DeleteAtBegin(){
-        // this.Head = null;
-        if (this.Head == null) {
+        // this.front = null;
+        if (this.front == null) {
             System.out.println("the list is empty");
         }else{
-            this.Head = this.Head.next;
+            this.front = this.front.next;
         }
     }
     public void DeleteAtPostion(int pos){
         if (pos == 1){
-            this.Head = this.Head.next;
+            this.front = this.front.next;
         }
         else{
-            Node temp = this.Head;
+            Node temp = this.front;
             while (pos - 2 > 0 && temp.next != null) {
                 temp = temp.next;
                 pos--;
@@ -87,9 +87,13 @@ public class LinkedList {
         }
     }
     public void Display(){
-        Node temp = this.Head;
+        if(front == null){
+            System.out.println("the list is empty");
+            return;
+        }
+        Node temp = this.front;
         while (temp != null) {
-            System.out.println(temp.data);                                              // 4
+            System.out.print(temp.data+" ");                                              // 4
             temp = temp.next;
         }
     }
@@ -110,11 +114,11 @@ public class LinkedList {
 
 /*public void insatend(int data){
     Node newNOde = new Node(data);
-    if (this.Head == null){
-        this.Head = newNode;
+    if (this.front == null){
+        this.front = newNode;
         }
     else{
-        Node temp = this.Head;
+        Node temp = this.front;
     while( temp.next != null){
         temp = temp.next;
     }
@@ -124,37 +128,37 @@ public class LinkedList {
     
 public void InsAtbegin(int data){
     Node newNode = new Node(data);
-    if (this.head == null){
-    this.Head = newNode;
+    if (this.front == null){
+    this.front = newNode;
 }
     else {
-        newNode.next = this.Head;
-    this.Head = newNode;
+        newNode.next = this.front;
+    this.front = newNode;
 }
 }
 
 public void InAtpos(int data, int pos){
     Node newNode = new Node(data);
     if(pos == 1){
-    newNode.next = this.Head;
-    this.Head = newNode;
+    newNode.next = this.front;
+    this.front = newNode;
     }
     else {
-        Node temp = this.Head;
+        Node temp = this.front;
         while(pos - 2 > 0 && temp.next != null ){
         temp = temp.next;
         }
-        newNode.next = temp.Head ;
-        temp.head = newNode;
+        newNode.next = temp.front ;
+        temp.front = newNode;
     }
 
 public void deleteatend(){
-    if ( this.head == null){
+    if ( this.front == null){
         System.out.println("list is empty")
-    }else if (this.Head.next == null){
-        this.head = null
+    }else if (this.front.next == null){
+        this.front = null
     }else {
-        node temp = this.Head;
+        node temp = this.front;
         while(temp.next.next != null){
             temp = temp.next;
         }
@@ -162,19 +166,19 @@ public void deleteatend(){
     }
 }
 public void deleteatbegin(){
-    if(this.Head == null){
+    if(this.front == null){
     sysout("empty");
     }
     else{
-        this.Head = this.Head.next;    
+        this.front = this.front.next;    
     }
 }
 public void deleteatpos(int pos ){
     if(pos == 1){
-    this.Head = this.Head.next;
+    this.front = this.front.next;
     }
     else{
-        Node temp = this.Head;
+        Node temp = this.front;
         while( pos - 2 > 0 && temp.next != null){
         temp = temp.next;
         pos--;

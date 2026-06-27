@@ -23,7 +23,7 @@ public class CircularLinkedList {
             }
             temp.next = newNode;
         }
-        newNode.next = this.Head;
+        newNode.next = Head;
     }
     public void InsertAtBegin(int data){
         Node newNode = new Node(data);
@@ -34,7 +34,7 @@ public class CircularLinkedList {
             newNode.next = this.Head;
             this.Head = newNode;
         }
-        newNode.next = this.Head;
+        newNode.next = Head;
     }
     public void InsertAtPostion(int data ,  int pos){
         Node newNode = new Node(data);
